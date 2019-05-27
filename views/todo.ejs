@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>My todolist</title>
+        <style>
+            a {text-decoration: none; color: black;}
+        </style>
+    </head>
+
+    <body>
+        <h1>My todolist</h1>
+        <ul id="todo">
+        <% todolist.forEach(function(todo, index) { %>
+            <li><a href="/todo/delete/<%= index %>">✘</a> <a  onClick="edit('<%- todo %>','<%- index %>')">✎</a> <%- todo %></li>
+        <% }); %>
+        </ul>
+        
+
+        <form action="/todo/add/" method="post" name="listForm">
+            <p>
+                <label for="newtodo">What shoud I do?</label>
+                <input type="text" name="newtodo" id="newtodo" autofocus />
+                <br/>
+                <input type="submit" /> 
+                <input type="button" onClick='update(indexValue)' value="Update"> </input>
+            </p>
+        </form>
+    </body>
+    <script type="text/javascript">
+        var indexValue = 0 ;
+        function edit(todo,index){
+            document.getElementById('newtodo').value = todo;
+            indexValue = index;
+        }
+        function update(indexValue){
+            document.listForm.action= "/todo/edit/"+indexValue;
+            document.listForm.submit();
+        }
+    </script>
+</html>

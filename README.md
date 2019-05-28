@@ -37,7 +37,6 @@ Visit http://localhost:8080 in your browser
 > - I have added Edit feature with pencil symbol
 > - After updating item Click on Update button to update in list
 > - I have added test cases for Add, update and delete item in test_coverage shell script ( Also created excel file with different scenarios)
-> - Execute test cases with  ./test_coverage.sh (can even add unit test cases)
-
+> - For executing test cases run locally 'node app' and execute  ./test_coverage.sh (can even add unit test cases)
 > - To setup and install kubernetes I have added 2 files for OCX and unix ( install_osx.sh and install_unix.sh)
 > - To start with minikube run ./run_minikube.sh -> It will start minikube , create deployment service and curl for output
